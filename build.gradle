@@ -28,3 +28,13 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+
+task copyTask(type: Copy) {
+    def fileD = '/Users/majdalden/Documents/MyAndroidProjects/Miran/stepprogressbar/StepProgressBar.aar'
+    if (file(fileD).exists())
+        delete(fileD)
+
+    from '/Users/majdalden/Documents/MyAndroidProjects/StepProgressBar/stepprogressbar/build/outputs/aar/stepprogressbar-release.aar'
+    into '/Users/majdalden/Documents/MyAndroidProjects/Miran/stepprogressbar'
+}
