@@ -31,7 +31,7 @@
         app:stepMargin="8dp"
         app:stepUndoneColor="#dedede" />
 
-    <kr.co.prnd.StepStepProgressBar
+    <kr.co.prnd.StepProgressBar
         android:layout_width="match_parent"
         android:layout_height="8dp"
         android:layout_marginTop="24dp"

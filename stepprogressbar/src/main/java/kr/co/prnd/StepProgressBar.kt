@@ -10,7 +10,7 @@ import com.google.android.material.progressindicator.LinearProgressIndicator
 import kr.co.prnd.stepprogressbar.R
 
 
-class StepStepProgressBar @JvmOverloads constructor(
+class StepProgressBar @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
@@ -94,7 +94,7 @@ class StepStepProgressBar @JvmOverloads constructor(
                     0
                 )
                 val progressArrays = resources.getIntArray(progressArraysId).toMutableList()
-                this@StepStepProgressBar.progressArrays = progressArrays
+                this@StepProgressBar.progressArrays = progressArrays
             } catch (e: Exception) {
                 e.printStackTrace()
             }
