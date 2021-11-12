@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="StepProgressBar">
+    <declare-styleable name="StepLinearLayout">
         <attr name="step" format="integer" />
         <attr name="max" format="integer" />
         <attr name="stepDoneColor" format="color|reference" />
         <attr name="stepUndoneColor" format="color|reference" />
         <attr name="stepMargin" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="StepProgressBar">
+        <attr name="progressArrays" format="reference" />
+        <attr name="trackCornerRadiusProgress" format="dimension" />
+        <attr name="trackThicknessProgress" format="dimension">
+            <enum name="match_parent" value="-1" />
+        </attr>
     </declare-styleable>
 
 </resources>

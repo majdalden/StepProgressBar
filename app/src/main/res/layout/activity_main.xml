@@ -3,24 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
 
-    <kr.co.prnd.StepProgressBar
+    <kr.co.prnd.StepLinearLayout
         android:id="@+id/stepProgressBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp" />
 
 
-    <kr.co.prnd.StepProgressBar
+    <kr.co.prnd.StepLinearLayout
         android:layout_width="300dp"
         android:layout_height="8dp"
         android:layout_marginTop="24dp"
         app:max="10"
         app:step="5" />
 
-    <kr.co.prnd.StepProgressBar
+    <kr.co.prnd.StepLinearLayout
         android:layout_width="match_parent"
         android:layout_height="8dp"
         android:layout_marginTop="24dp"
@@ -30,5 +31,31 @@
         app:stepMargin="8dp"
         app:stepUndoneColor="#dedede" />
 
+    <kr.co.prnd.StepStepProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginTop="24dp"
+        app:max="10"
+        app:progressArrays="@array/progressArray"
+        app:step="2"
+        app:stepDoneColor="#ff0000"
+        app:stepMargin="8dp"
+        app:stepUndoneColor="#dedede"
+        app:trackThicknessProgress="match_parent" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:visibility="gone"
+        app:indicatorColor="#ff0000"
+        app:trackColor="#dedede"
+        app:trackCornerRadius="0dp"
+        app:trackThickness="8dp"
+        tools:progress="80"
+        tools:visibility="visible" />
 
 </LinearLayout>

@@ -4,17 +4,17 @@ import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
 import android.view.View
-import android.widget.LinearLayout
 import androidx.annotation.CallSuper
+import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.core.view.doOnPreDraw
 import kr.co.prnd.stepprogressbar.R
 
 
-class StepProgressBar @JvmOverloads constructor(
+class StepLinearLayout @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : LinearLayout(context, attrs, defStyleAttr) {
+) : LinearLayoutCompat(context, attrs, defStyleAttr) {
 
     private val defaultHeight =
         resources.getDimensionPixelSize(R.dimen.step_progressbar_default_height)
@@ -58,17 +58,20 @@ class StepProgressBar @JvmOverloads constructor(
             val typedArray =
                 context.obtainStyledAttributes(
                     attrs,
-                    R.styleable.StepProgressBar, defStyleAttr, 0
+                    R.styleable.StepLinearLayout, defStyleAttr, 0
                 )
 
-            max = typedArray.getInt(R.styleable.StepProgressBar_max, max)
-            step = typedArray.getInt(R.styleable.StepProgressBar_step, step)
+            max = typedArray.getInt(R.styleable.StepLinearLayout_max, max)
+            step = typedArray.getInt(R.styleable.StepLinearLayout_step, step)
             stepDoneColor =
-                typedArray.getColor(R.styleable.StepProgressBar_stepDoneColor, stepDoneColor)
+                typedArray.getColor(R.styleable.StepLinearLayout_stepDoneColor, stepDoneColor)
             stepUndoneColor =
-                typedArray.getColor(R.styleable.StepProgressBar_stepUndoneColor, stepUndoneColor)
+                typedArray.getColor(R.styleable.StepLinearLayout_stepUndoneColor, stepUndoneColor)
             stepMargin =
-                typedArray.getDimensionPixelSize(R.styleable.StepProgressBar_stepMargin, stepMargin)
+                typedArray.getDimensionPixelSize(
+                    R.styleable.StepLinearLayout_stepMargin,
+                    stepMargin
+                )
 
             typedArray.recycle()
         }
@@ -114,6 +117,9 @@ class StepProgressBar @JvmOverloads constructor(
     private fun addDoneView(doneViewWidth: Int, height: Int) {
         addView(View(context).apply {
             layoutParams = LayoutParams(doneViewWidth, height)
+                .apply {
+                    marginEnd = stepMargin
+                }
             setBackgroundColor(stepDoneColor)
         })
     }
@@ -121,7 +127,9 @@ class StepProgressBar @JvmOverloads constructor(
     private fun addUndoneView(stepItemWidth: Int, height: Int) {
         addView(View(context).apply {
             layoutParams = LayoutParams(stepItemWidth, height)
-                .apply { leftMargin = stepMargin }
+                .apply {
+                    marginEnd = stepMargin
+                }
             setBackgroundColor(stepUndoneColor)
         })
     }

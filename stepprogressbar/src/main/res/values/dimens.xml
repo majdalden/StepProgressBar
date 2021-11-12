@@ -2,5 +2,7 @@
 <resources>
     <dimen name="step_progressbar_default_margin">2dp</dimen>
     <dimen name="step_progressbar_default_height">2dp</dimen>
+    <dimen name="step_progressbar_default_track_corner_radius_progress">4dp</dimen>
+    <dimen name="step_progressbar_default_track_track_thickness_progress">2dp</dimen>
 
 </resources>

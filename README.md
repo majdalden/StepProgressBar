@@ -33,7 +33,7 @@ If you think this library is useful, please press star button at upside.
 
 ## How to use
 ```xml
- <kr.co.prnd.StepProgressBar
+ <kr.co.prnd.StepLinearLayout
         android:layout_width="match_parent"
         android:layout_height="8dp"
         android:layout_marginTop="24dp"
